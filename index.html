@@ -32,7 +32,10 @@
     $('<div/>').text(message.text).prepend($('<em/>')
       .text(message.name+': ')).appendTo($('#messagesDiv'));
     $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
-    notification.play();
+
+    if (message.name !== $('#nameInput').val()) {
+      notification.play();  
+    }
   });
 </script>
 </body>
